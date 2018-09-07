@@ -86,6 +86,7 @@
 			}
 
 			$caption            = get_post_meta($slide->ID, 'my_slider_caption', true);
+                        $captionname	    = get_post_meta($slide->ID, 'my_team_info', true);
 			$url                = get_post_meta($slide->ID, 'my_slider_url', true);
 			$sl_image_url       = wp_get_attachment_image_src( get_post_thumbnail_id($slide->ID), 'slider-post-thumbnail');
 			$sl_small_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($slide->ID), 'slider-thumb');
@@ -100,9 +101,10 @@
 					echo "' data-thumb='";
 					echo $sl_small_image_url[0];
 					echo "'>";
-					if ($caption) { ?>
+					if ($caption AND $captionname) { ?>
 						<div class="camera_caption <?php echo $banner_animation;?>">
 							<?php echo stripslashes(htmlspecialchars_decode($caption)); ?>
+							<?php echo stripslashes(htmlspecialchars_decode($captionname)); ?>
 						</div>
 					<?php }
 				} else {
@@ -111,9 +113,10 @@
 					echo "' data-thumb='";
 					echo $sl_small_image_url[0];
 					echo "'>";
-					if ($caption) { ?>
+					if ($caption AND $captionname) { ?>
 						<div class="camera_caption <?php echo $banner_animation;?>">
 							<?php echo stripslashes(htmlspecialchars_decode($caption)); ?>
+							<?php echo stripslashes(htmlspecialchars_decode($captionname)); ?>
 						</div>
 					<?php }
 				}

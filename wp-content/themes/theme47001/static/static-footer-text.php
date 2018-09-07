@@ -5,6 +5,6 @@
 	<?php if($myfooter_text){?>
 		<?php echo of_get_option('footer_text'); ?>
 	<?php } else { ?>
-		&copy; <?php echo date('Y'); ?> | <a href="<?php echo home_url(); ?>/privacy-policy/" title="Privacy Policy"><?php _e('Privacy Policy', CURRENT_THEME); ?></a>
+		&copy; <?php echo date('Y'); ?> | <a href="<?php echo home_url(); ?>/privacy-policy/" title="Privacy Policy"><?php _e('Privacy Policy', CURRENT_THEME); ?></a> | <a href="<?php echo home_url(); ?>/terms-and-conditions" title="Terms & Conditions"><?php _e('Terms and Conditions', CURRENT_THEME); ?></a>
 	<?php } ?>
 </div>

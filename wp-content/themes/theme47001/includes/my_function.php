@@ -441,69 +441,81 @@
 		$testi = get_posts($args);
 
 		$output = '<div class="testimonials '.$custom_class.'">';
-		
-		global $post;
-		global $my_string_limit_words;
+			$output .= '<div id="myCarousel" class="carousel slide testicarousel">';
+			$output .= '<div class="carousel-inner">';
+				global $post;
+				global $my_string_limit_words;
 
-		foreach ($testi as $k => $post) {
-			// Unset not translated posts
-			if ( function_exists( 'wpml_get_language_information' ) ) {
-				global $sitepress;
+				foreach ($testi as $k => $post) {
+					// Unset not translated posts
+					if ( function_exists( 'wpml_get_language_information' ) ) {
+						global $sitepress;
 
-				$check              = wpml_get_language_information( $post->ID );
-				$language_code      = substr( $check['locale'], 0, 2 );
-				if ( $language_code != $sitepress->get_current_language() ) unset( $testi[$k] );
+						$check              = wpml_get_language_information( $post->ID );
+						$language_code      = substr( $check['locale'], 0, 2 );
+						if ( $language_code != $sitepress->get_current_language() ) unset( $testi[$k] );
 
-				// Post ID is different in a second language Solution
-				if ( function_exists( 'icl_object_id' ) ) $post = get_post( icl_object_id( $post->ID, 'testi', true ) );
-			}
-			setup_postdata($post);
-			$excerpt        = get_the_excerpt();
-			$testiname      = get_post_meta(get_the_ID(), 'my_testi_caption', true);
-			$testiurl       = get_post_meta(get_the_ID(), 'my_testi_url', true);
-			$testiinfo      = get_post_meta(get_the_ID(), 'my_testi_info', true);
-			$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-			$url            = $attachment_url['0'];
-			$image          = aq_resize($url, 280, 240, true);
-
-			$output .= '<div class="testi-item">';
-				$output .= '<blockquote class="testi-item_blockquote">';
-					
-					$output .= '<a href="'.get_permalink($post->ID).'">';
-						$output .= '"'.my_string_limit_words($excerpt,$excerpt_count).'"';
-					$output .= '</a><div class="clear"></div>';
-
-				$output .= '</blockquote>';
-
-				if ($thumb == 'true') {
-					if ( has_post_thumbnail($post->ID) ){
-						$output .= '<figure class="featured-thumbnail">';
-						$output .= '<img src="'.$image.'" alt="" />';
-						$output .= '</figure>';
+						// Post ID is different in a second language Solution
+						if ( function_exists( 'icl_object_id' ) ) $post = get_post( icl_object_id( $post->ID, 'testi', true ) );
 					}
-				}
+					setup_postdata($post);
+					$excerpt        = get_the_excerpt();
+					$testiname      = get_post_meta(get_the_ID(), 'my_testi_caption', true);
+					$testiurl       = get_post_meta(get_the_ID(), 'my_testi_url', true);
+					$testiinfo      = get_post_meta(get_the_ID(), 'my_testi_info', true);
+					$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+					$url            = $attachment_url['0'];
+					$image          = aq_resize($url, 280, 240, true);
+					
+							if ($k == 0) {
+								$output .= '<div class="item active">';
+							} else {
+								$output .= '<div class="item">';
+							}
+							$output .= '<div class="testi-item">';
+							$output .= '<blockquote class="testi-item_blockquote">';
+								
+								$output .= '<a href="http://vegacapital.net/new/about/testi/">';
+									$output .= '"'.my_string_limit_words($excerpt,$excerpt_count).'"';
+								$output .= '</a><div class="clear"></div>';
 
-				$output .= '<small class="testi-meta">';
-					if( isset($testiname) ) { 
-						$output .= '<div class="user">';
-							$output .= $testiname;
+							$output .= '</blockquote>';
+
+							if ($thumb == 'true') {
+								if ( has_post_thumbnail($post->ID) ){
+									$output .= '<figure class="featured-thumbnail">';
+									$output .= '<img src="'.$image.'" alt="" />';
+									$output .= '</figure>';
+								}
+							}
+
+							$output .= '<small class="testi-meta">';
+								if( isset($testiname) ) { 
+									$output .= '<div class="user">';
+										$output .= $testiname;
+									$output .= '</div>';
+								}
+								
+								if( isset($testiinfo) ) { 
+									$output .= '<div class="info">';
+										$output .= $testiinfo;
+									$output .= '</div>';
+								}
+								
+							$output .= '</small>';
 						$output .= '</div>';
-					}
-					
-					if( isset($testiinfo) ) { 
-						$output .= '<div class="info">';
-							$output .= $testiinfo;
-						$output .= '</div>';
-					}
-					
-				$output .= '</small>';
-					
-			$output .= '</div>';
+					$output .= '</div>';
 
 		}
+				$output .= '</div>';
+			$output .= '</div>';
 		$output .= '</div>';
+		$output .= '<script type="text/javascript">
+					$(document).ready(function(){ $("#myCarousel.testicarousel").carousel(); });
+				</script>';
 		return $output;
 	}
 	add_shortcode('recenttesti', 'shortcode_recenttesti');
+
 
 ?>

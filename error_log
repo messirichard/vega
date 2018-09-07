@@ -2,3 +2,33 @@
 [23-Aug-2018 07:55:36 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
 [23-Aug-2018 08:00:08 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
 [23-Aug-2018 08:22:11 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[24-Aug-2018 23:03:31 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:06:38 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:09:41 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:12:56 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:14:29 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:16:22 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:28:59 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:29:09 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:33:34 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[25-Aug-2018 00:33:34 UTC] PHP Warning:  Illegal string offset 'content' in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php on line 912
+[30-Aug-2018 05:00:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function setFilterType() on boolean in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php:2657
+Stack trace:
+#0 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php(2634): WPDataTable->prepareRenderingRules(Array)
+#1 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php(3216): WPDataTable->fillFromData(Object(stdClass), Array)
+#2 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatachart.php(1304): WPDataTable::loadWpDataTable('1', NULL, true)
+#3 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatachart.php(2632): WPDataChart->loadChildWPDataTable()
+#4 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/controllers/wdt_functions.php(365): WPDataChart->loadFromDB()
+#5 /home/m79b2glvdtnr/public_html/new/wp-includes/shortcodes.php(319): wdtWpDataChartShortcodeHandler(Array in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php on line 2657
+[30-Aug-2018 05:01:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function setFilterType() on boolean in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php:2657
+Stack trace:
+#0 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php(2634): WPDataTable->prepareRenderingRules(Array)
+#1 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php(3216): WPDataTable->fillFromData(Object(stdClass), Array)
+#2 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatachart.php(1304): WPDataTable::loadWpDataTable('1', NULL, true)
+#3 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatachart.php(2632): WPDataChart->loadChildWPDataTable()
+#4 /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/controllers/wdt_functions.php(365): WPDataChart->loadFromDB()
+#5 /home/m79b2glvdtnr/public_html/new/wp-includes/shortcodes.php(319): wdtWpDataChartShortcodeHandler(Array in /home/m79b2glvdtnr/public_html/new/wp-content/plugins/wpdatatables/source/class.wpdatatable.php on line 2657
+[31-Aug-2018 08:38:26 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/m79b2glvdtnr/public_html/new/wp-content/themes/theme47001/includes/my_function.php on line 468
+[31-Aug-2018 08:38:29 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/m79b2glvdtnr/public_html/new/wp-content/themes/theme47001/includes/my_function.php on line 468
+[31-Aug-2018 08:41:30 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/m79b2glvdtnr/public_html/new/wp-content/themes/theme47001/includes/my_function.php on line 468
+[31-Aug-2018 08:49:31 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/m79b2glvdtnr/public_html/new/wp-content/themes/theme47001/includes/my_function.php on line 468
